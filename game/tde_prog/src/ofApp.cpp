@@ -5,8 +5,9 @@ void ofApp::setup() {
 	//ofSetBackgroundColor(0, 0, 0);
 	ofHideCursor();
 
-	gameManager = new GameManager(GAME_MENU);
+	gameManager = new GameManager(GAME_PLAY);
 	gameMenu = new GameMenu();
+	gamePlay = new GamePlay(gameManager);
 }
 
 //--------------------------------------------------------------
@@ -16,11 +17,13 @@ void ofApp::update() {
 		gameMenu->Update(gameManager);
 		break;
 	case GAME_PLAY:
+		gamePlay->Update(gameManager);
 		break;
 	case GAME_OVER:
 		break;
 	case GAME_RESET:
 		gameMenu->Reset();
+		gamePlay->Reset(gameManager);
 		gameManager->SetGameState(GAME_MENU);
 		break;
 	}
@@ -33,6 +36,7 @@ void ofApp::draw() {
 		gameMenu->Draw(gameManager);
 		break;
 	case GAME_PLAY:
+		gamePlay->Draw(gameManager);
 		break;
 	case GAME_OVER:
 		break;

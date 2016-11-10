@@ -181,6 +181,7 @@
     <ClCompile Include="src\GameMenu.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="src\Teemo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\GamePlay.h" />
@@ -188,6 +189,7 @@
     <ClInclude Include="src\GameManager.h" />
     <ClInclude Include="src\GameMenu.h" />
     <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\Teemo.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

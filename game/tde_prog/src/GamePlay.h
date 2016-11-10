@@ -5,8 +5,14 @@
 
 class GamePlay
 {
+private:
+	ofImage m_background;
 public:
-	GamePlay();
+	GamePlay(GameManager *game);
 	~GamePlay();
+
+	void Update(GameManager *game);
+	void Draw(GameManager *game);
+	void Reset(GameManager *game);
 };
 

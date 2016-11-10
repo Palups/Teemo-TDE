@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "GameManager.h"
 #include "GameMenu.h"
+#include "GamePlay.h"
 
 class ofApp : public ofBaseApp {
 
@@ -25,4 +26,5 @@ public:
 
 	GameManager *gameManager;
 	GameMenu *gameMenu;
+	GamePlay *gamePlay;
 };

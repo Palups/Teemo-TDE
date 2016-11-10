@@ -11,6 +11,7 @@
     <ClCompile Include="src\GameManager.cpp" />
     <ClCompile Include="src\GameMenu.cpp" />
     <ClCompile Include="src\GamePlay.cpp" />
+    <ClCompile Include="src\Teemo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -28,6 +29,7 @@
     <ClInclude Include="src\GameMenu.h" />
     <ClInclude Include="src\GameManager.h" />
     <ClInclude Include="src\GamePlay.h" />
+    <ClInclude Include="src\Teemo.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
