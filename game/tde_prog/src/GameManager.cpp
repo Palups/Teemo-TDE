@@ -11,7 +11,7 @@ GameManager::~GameManager()
 {
 }
 
-void GameManager::draw() {
+void GameManager::Draw() {
 	m_mouse.draw(ofGetMouseX(), ofGetMouseY());
 }
 
@@ -21,4 +21,8 @@ void GameManager::SetGameState(int gameState) {
 
 int GameManager::GetGameState() {
 	return m_gameState;
+}
+
+void GameManager::Update() {
+
 }

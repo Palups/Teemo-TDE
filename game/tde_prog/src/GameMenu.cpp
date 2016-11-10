@@ -3,7 +3,7 @@
 GameMenu::GameMenu()
 {
 	m_background.loadImage("images/menuBackground.png");
-	reset();
+	Reset();
 }
 
 
@@ -11,16 +11,17 @@ GameMenu::~GameMenu()
 {
 }
 
-void GameMenu::reset() {
-	m_newGame = new Button(500, 300, 50, 100, "images/newGame.png");
-	m_exit = new Button(500, 500, 50, 100, "images/exit.png");
+void GameMenu::Reset() {
+	m_newGame = new Button(640, 580, 50, 100, "images/newGame.png");
+	m_exit = new Button(640, 650, 50, 100, "images/exit.png");
 }
 
-void GameMenu::update(GameManager *game) {
-
+void GameMenu::Update(GameManager *game) {
+	
 }
 
-void GameMenu::draw(GameManager *game) {
-	m_newGame->draw();
-	m_exit->draw();
+void GameMenu::Draw(GameManager *game) {
+	m_background.draw(0,0);
+	m_newGame->Draw();
+	m_exit->Draw();
 }

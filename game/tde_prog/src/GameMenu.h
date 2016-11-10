@@ -14,7 +14,7 @@ public:
 	GameMenu();
 	~GameMenu();
 
-	void update(GameManager *game);
-	void draw(GameManager *game);
-	void reset();
+	void Update(GameManager *game);
+	void Draw(GameManager *game);
+	void Reset();
 };

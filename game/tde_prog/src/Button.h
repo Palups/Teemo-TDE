@@ -13,6 +13,12 @@ public:
 	Button(int posX, int posY, int height, int width, std::string path);
 	~Button();
 
-	void draw();
+	int GetWidth();
+	int GetHeight();
+
+	int GetPosX();
+	int GetPosY();
+
+	void Draw();
 };
 

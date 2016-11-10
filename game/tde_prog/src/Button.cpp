@@ -14,6 +14,22 @@ Button::~Button()
 {
 }
 
-void Button::draw() {
+void Button::Draw() {
 	m_image.draw(m_posX, m_posY);
+}
+
+int Button::GetWidth() {
+	return m_width;
+}
+
+int Button::GetHeight() {
+	return m_height;
+}
+
+int Button::GetPosX() {
+	return m_posX;
+}
+
+int Button::GetPosY() {
+	return m_posY;
 }

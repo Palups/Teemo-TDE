@@ -22,8 +22,8 @@ private:
 
 	int m_gameState;
 public:
-	void update();
-	void draw();
+	void Update();
+	void Draw();
 
 	GameManager(int gameState);
 	~GameManager();

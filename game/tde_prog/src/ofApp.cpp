@@ -13,14 +13,14 @@ void ofApp::setup() {
 void ofApp::update() {
 	switch (gameManager->GetGameState()) {
 	case GAME_MENU:
-		gameMenu->update(gameManager);
+		gameMenu->Update(gameManager);
 		break;
 	case GAME_PLAY:
 		break;
 	case GAME_OVER:
 		break;
 	case GAME_RESET:
-		gameMenu->reset();
+		gameMenu->Reset();
 		gameManager->SetGameState(GAME_MENU);
 		break;
 	}
@@ -30,7 +30,7 @@ void ofApp::update() {
 void ofApp::draw() {
 	switch (gameManager->GetGameState()) {
 	case GAME_MENU:
-		gameMenu->draw(gameManager);
+		gameMenu->Draw(gameManager);
 		break;
 	case GAME_PLAY:
 		break;
@@ -40,7 +40,7 @@ void ofApp::draw() {
 		break;
 	}
 
-	gameManager->draw();
+	gameManager->Draw();
 }
 
 //--------------------------------------------------------------
