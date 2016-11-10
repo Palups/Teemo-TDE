@@ -1,7 +1,5 @@
 #include "Teemo.h"
 
-
-
 Teemo::Teemo()
 {
 }

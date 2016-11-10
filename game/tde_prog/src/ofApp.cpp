@@ -5,7 +5,7 @@ void ofApp::setup() {
 	//ofSetBackgroundColor(0, 0, 0);
 	ofHideCursor();
 
-	gameManager = new GameManager(GAME_PLAY);
+	gameManager = new GameManager(GAME_MENU);
 	gameMenu = new GameMenu();
 	gamePlay = new GamePlay(gameManager);
 }
@@ -69,7 +69,17 @@ void ofApp::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button) {
-
+	switch (gameManager->GetGameState()) {
+	case GAME_MENU:
+		gameMenu->MousePressed(ofGetMouseX(), ofGetMouseY(), 0, gameManager);
+		break;
+	case GAME_PLAY:
+		break;
+	case GAME_OVER:
+		break;
+	case GAME_RESET:
+		break;
+	}
 }
 
 //--------------------------------------------------------------

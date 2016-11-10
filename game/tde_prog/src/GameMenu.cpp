@@ -16,6 +16,12 @@ void GameMenu::Reset() {
 	m_exit = new Button(640, 650, 50, 100, "images/exit.png");
 }
 
+void GameMenu::MousePressed(int x, int y, int btn, GameManager *game)
+{
+	if (x > 640 && x < 740 && y > 580 && y < 360 && btn == 0)
+		game->SetGameState(GAME_PLAY);
+}
+
 void GameMenu::Update(GameManager *game) {
 	
 }
