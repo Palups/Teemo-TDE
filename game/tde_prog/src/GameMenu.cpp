@@ -18,7 +18,7 @@ void GameMenu::Reset() {
 
 void GameMenu::MousePressed(int x, int y, int btn, GameManager *game)
 {
-	if (x > 640 && x < 740 && y > 580 && y < 360 && btn == 0)
+	if (x > 640 && x < 740 && y > 580 && y < 630 && btn == OF_MOUSE_BUTTON_1)
 		game->SetGameState(GAME_PLAY);
 }
 

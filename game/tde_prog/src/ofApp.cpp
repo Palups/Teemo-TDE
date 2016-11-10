@@ -69,9 +69,14 @@ void ofApp::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button) {
+	
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseReleased(int x, int y, int button) {
 	switch (gameManager->GetGameState()) {
 	case GAME_MENU:
-		gameMenu->MousePressed(ofGetMouseX(), ofGetMouseY(), 0, gameManager);
+		gameMenu->MousePressed(ofGetMouseX(), ofGetMouseY(), button, gameManager);
 		break;
 	case GAME_PLAY:
 		break;
@@ -80,11 +85,6 @@ void ofApp::mousePressed(int x, int y, int button) {
 	case GAME_RESET:
 		break;
 	}
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button) {
-
 }
 
 //--------------------------------------------------------------
