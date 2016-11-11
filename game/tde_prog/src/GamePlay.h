@@ -2,11 +2,13 @@
 
 #include "ofMain.h"
 #include "GameManager.h"
+#include "Teemo.h"
 
 class GamePlay
 {
 private:
 	ofImage m_background;
+	Teemo *teemo;
 public:
 	GamePlay(GameManager *game);
 	~GamePlay();

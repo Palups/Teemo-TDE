@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Button.h"
+#include "Teemo.h"
 
 #define GAME_MENU 0
 #define GAME_PLAY 1
@@ -21,12 +22,17 @@ private:
 	ofImage m_mouse;
 
 	int m_gameState;
+	Teemo *teemo;
 public:
+	ofVec2f posMouse;
+
 	void Update();
 	void Draw();
-
+	
 	GameManager(int gameState);
 	~GameManager();
+
+	void MousePressed(int x, int y, int btn);
 
 	void SetGameState(int gameState);
 	int GetGameState();
