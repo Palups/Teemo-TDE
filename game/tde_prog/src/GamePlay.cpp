@@ -3,7 +3,7 @@
 GamePlay::GamePlay(GameManager *game)
 {
 	m_background.loadImage("images/gamePlayBackground.png");
-	
+
 	teemo = new Teemo(50, 50);  //Criar Teemo
 
 	Reset(game);
@@ -19,8 +19,6 @@ void GamePlay::Reset(GameManager *game) {
 }
 
 void GamePlay::Update(GameManager *game) {
-	
-
 	teemo->Update(game);
 }
 

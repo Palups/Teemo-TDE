@@ -24,4 +24,5 @@ int GameManager::GetGameState() {
 }
 
 void GameManager::Update() {
+
 }

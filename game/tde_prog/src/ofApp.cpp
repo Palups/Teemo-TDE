@@ -79,7 +79,6 @@ void ofApp::mouseReleased(int x, int y, int button) {
 		gameMenu->MousePressed(ofGetMouseX(), ofGetMouseY(), button, gameManager);
 		break;
 	case GAME_PLAY:
-		gameManager->MousePressed(ofGetMouseX(), ofGetMouseY(), button);
 		break;
 	case GAME_OVER:
 		break;
