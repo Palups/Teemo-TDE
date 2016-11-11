@@ -24,12 +24,4 @@ int GameManager::GetGameState() {
 }
 
 void GameManager::Update() {
-	posMouse.set(ofGetMouseX(), ofGetMouseY());
-}
-
-void GameManager::MousePressed(int x, int y, int btn)
-{
-	if (btn == OF_MOUSE_BUTTON_3)
-		teemo->SetDirTeemo(posMouse - teemo->GetPosTeemo());
-		teemo->GetDirTeemo.normalize();
 }
