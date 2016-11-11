@@ -20,6 +20,9 @@ void GameMenu::MousePressed(int x, int y, int btn, GameManager *game)
 {
 	if (x > 640 && x < 740 && y > 580 && y < 630 && btn == OF_MOUSE_BUTTON_1)
 		game->SetGameState(GAME_PLAY);
+
+	if (x > 640 && x < 740 && y > 650 && y < 700 && btn == OF_MOUSE_BUTTON_1)
+		std::exit(0);
 }
 
 void GameMenu::Update(GameManager *game) {
