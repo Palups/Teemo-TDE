@@ -13,8 +13,18 @@ Teemo::~Teemo()
 void Teemo::Reset()
 {
 	m_position.set(0, 0);
+	m_center.set(m_position.x + 30, m_position.y + 30);
 	m_hp = 515.76f;
 	m_mana = 267.20f;
+	m_angle = 0.0f;
+}
+
+void Teemo::Update(GameManager *game) {
+
+}
+
+void Teemo::Draw() {
+	m_image.draw(m_position.x, m_position.y);
 }
 
 void Teemo::SetPosition(ofVec2f position)
@@ -37,6 +47,21 @@ void Teemo::SetDestiny(ofVec2f destiny)
 	m_destiny = destiny;
 }
 
+void Teemo::SetAngle(float angle)
+{
+	m_angle = angle;
+}
+
+void Teemo::SetNextAngle(float nextAngle)
+{
+	m_nextAngle = nextAngle;
+}
+
+void Teemo::SetDistance(ofVec2f distance)
+{
+	m_distance = distance;
+}
+
 ofVec2f Teemo::GetPosition()
 {
 	return m_position;
@@ -57,10 +82,22 @@ ofVec2f Teemo::GetDestiny()
 	return m_destiny;
 }
 
-void Teemo::Update(GameManager *game) {
-
+float Teemo::GetAngle()
+{
+	return m_angle;
 }
 
-void Teemo::Draw() {
-	m_image.draw(m_position.x, m_position.y);
+float Teemo::GetNextAngle()
+{
+	return m_nextAngle;
+}
+
+ofVec2f Teemo::GetCenter()
+{
+	return m_center;
+}
+
+ofVec2f Teemo::GetDistance()
+{
+	return m_distance;
 }

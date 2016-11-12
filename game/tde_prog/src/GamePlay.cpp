@@ -25,6 +25,29 @@ void GamePlay::Update(GameManager *game) {
 	if (teemo->GetDestiny().distance(teemo->GetPosition()) > 5)
 		teemo->SetPosition(teemo->GetPosition() + teemo->GetSpeed() * 2);
 
+	//----------------------------
+
+	if (teemo->GetAngle() != teemo->GetNextAngle())
+		if (teemo->GetAngle() < teemo->GetNextAngle()) {
+			teemo->SetAngle(teemo->GetAngle() + 1);
+
+			if (teemo->GetAngle() > teemo->GetNextAngle())
+				teemo->SetAngle(teemo->GetNextAngle());
+			else
+				teemo->SetAngle(teemo->GetAngle());
+		}
+		else {
+			teemo->SetAngle(teemo->GetAngle() - 1);
+
+			if (teemo->GetAngle() < teemo->GetNextAngle())
+				teemo->SetAngle(teemo->GetNextAngle());
+			else
+				teemo->SetAngle(teemo->GetAngle());
+		}
+	
+
+	//----------------------------
+
 	teemo->Update(game);
 }
 
@@ -32,10 +55,19 @@ void GamePlay::MousePressed(int x, int y, int btn)
 {
 	if (btn == OF_MOUSE_BUTTON_3)
 		teemo->SetDestiny(ofVec2f(ofGetMouseX(), ofGetMouseY()));
-		
+
+	//----------------
+
+	teemo->SetDistance(teemo->GetDestiny() - teemo->GetCenter());
+	teemo->SetNextAngle(ofRadToDeg(atan2f(teemo->GetDistance().x, teemo->GetDistance().y)));
 }
 
 void GamePlay::Draw(GameManager *game) {
 	m_background.draw(0, 0);
 	teemo->Draw();
+
+	ofPushMatrix();
+	ofTranslate(teemo->GetCenter());
+	ofRotateZ(teemo->GetAngle() - 90);
+	ofPopMatrix();
 }
