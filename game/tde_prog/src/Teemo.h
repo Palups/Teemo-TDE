@@ -6,11 +6,14 @@
 class Teemo
 {
 private:
-	int m_posX, m_posY;
+	ofVec2f m_position;
+
 	float m_hp, m_mana, distance;
+
 	ofImage m_image;
+
 public:
-	Teemo(int posX, int posY);
+	Teemo();
 	~Teemo();
 
 	void Update(GameManager *game);
