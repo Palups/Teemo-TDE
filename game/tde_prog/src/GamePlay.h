@@ -13,6 +13,8 @@ public:
 	GamePlay(GameManager *game);
 	~GamePlay();
 
+	void MousePressed(int x, int y, int btn);
+
 	void Update(GameManager *game);
 	void Draw(GameManager *game);
 	void Reset(GameManager *game);
