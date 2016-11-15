@@ -175,6 +175,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\HUD.cpp" />
     <ClCompile Include="src\GamePlay.cpp" />
     <ClCompile Include="src\Button.cpp" />
     <ClCompile Include="src\GameManager.cpp" />
@@ -184,6 +185,7 @@
     <ClCompile Include="src\Teemo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\HUD.h" />
     <ClInclude Include="src\GamePlay.h" />
     <ClInclude Include="src\Button.h" />
     <ClInclude Include="src\GameManager.h" />
