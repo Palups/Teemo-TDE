@@ -19,14 +19,15 @@ void GamePlay::Reset(GameManager *game) {
 }
 
 void GamePlay::Update(GameManager *game) {
+
+	// Teemo andando ao clicar com botão direito
 	teemo->SetDirection(teemo->GetDestiny() - teemo->GetPosition());
 	teemo->SetSpeed(teemo->GetDirection().normalize());
 
 	if (teemo->GetDestiny().distance(teemo->GetPosition()) > 5)
 		teemo->SetPosition(teemo->GetPosition() + teemo->GetSpeed() * 2);
 
-	//----------------------------
-
+	// Teemo deveria olhar pra onde é clicado
 	if (teemo->GetAngle() != teemo->GetNextAngle())
 		if (teemo->GetAngle() < teemo->GetNextAngle()) {
 			teemo->SetAngle(teemo->GetAngle() + 1);
