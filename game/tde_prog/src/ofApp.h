@@ -27,5 +27,4 @@ public:
 	GameManager *gameManager;
 	GameMenu *gameMenu;
 	GamePlay *gamePlay;
-	ofVec2f camera;
 };

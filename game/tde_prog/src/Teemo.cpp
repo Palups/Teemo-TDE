@@ -12,7 +12,7 @@ Teemo::~Teemo()
 
 void Teemo::Reset()
 {
-	m_position.set(ofGetWidth() / 2, ofGetHeight() / 2);
+	m_position.set(0, 0);
 	m_hp = 515.76f;
 	m_mana = 267.20f;
 }
@@ -21,9 +21,8 @@ void Teemo::Update(GameManager *game) {
 
 }
 
-void Teemo::Draw(ofVec2f camera)
-{
-	m_image.draw(m_position - camera);
+void Teemo::Draw() {
+	m_image.draw(m_position.x, m_position.y);
 }
 
 void Teemo::SetPosition(ofVec2f position)
