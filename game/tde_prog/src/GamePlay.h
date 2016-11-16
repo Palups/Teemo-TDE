@@ -11,6 +11,8 @@ private:
 	ofImage m_background;
 	Teemo *teemo;
 	HUD *hud;
+	ofVec2f m_camera;
+
 public:
 	GamePlay(GameManager *game);
 	~GamePlay();
