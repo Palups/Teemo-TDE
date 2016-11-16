@@ -6,6 +6,7 @@ GamePlay::GamePlay(GameManager *game)
 
 	teemo = new Teemo();  //Criar Teemo
 	hud = new HUD(); //Criar HUD
+	camera = new Camera(ofVec2f (0,0));
 
 	Reset(game);
 }
@@ -22,6 +23,8 @@ void GamePlay::Reset(GameManager *game) {
 
 void GamePlay::Update(GameManager *game) {
 
+	camera.set()
+
 	// Teemo andando ao clicar com botão direito
 	teemo->SetDirection(teemo->GetDestiny() - teemo->GetPosition());
 	teemo->SetSpeed(teemo->GetDirection().normalize());
@@ -33,6 +36,7 @@ void GamePlay::Update(GameManager *game) {
 
 	teemo->Update(game);
 	hud->Update(game, teemo);
+	camera->Update(teemo->GetPosition());
 }
 
 void GamePlay::MousePressed(int x, int y, int btn)
@@ -43,7 +47,7 @@ void GamePlay::MousePressed(int x, int y, int btn)
 }
 
 void GamePlay::Draw(GameManager *game) {
-	m_background.draw(0, 0);
-	teemo->Draw();
+	m_background.draw(ofVec2f(0,0) - camera->GetPosition());
+	teemo->Draw(camera->GetPosition());
 	hud->Draw(teemo);
 }

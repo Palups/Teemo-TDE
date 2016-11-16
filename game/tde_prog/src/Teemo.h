@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "GameManager.h"
+#include "Camera.h"
 
 class Teemo
 {
@@ -18,7 +19,7 @@ public:
 	~Teemo();
 
 	void Update(GameManager *game);
-	void Draw();
+	void Draw(ofVec2f camera);
 	void Reset();
 
 	void SetPosition(ofVec2f position);
