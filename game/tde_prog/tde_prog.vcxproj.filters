@@ -13,7 +13,6 @@
     <ClCompile Include="src\GamePlay.cpp" />
     <ClCompile Include="src\Teemo.cpp" />
     <ClCompile Include="src\HUD.cpp" />
-    <ClCompile Include="src\Camera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -33,7 +32,6 @@
     <ClInclude Include="src\GamePlay.h" />
     <ClInclude Include="src\Teemo.h" />
     <ClInclude Include="src\HUD.h" />
-    <ClInclude Include="src\Camera.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
