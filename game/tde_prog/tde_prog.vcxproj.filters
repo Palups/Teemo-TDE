@@ -14,7 +14,7 @@
     <ClCompile Include="src\Teemo.cpp" />
     <ClCompile Include="src\HUD.cpp" />
     <ClCompile Include="src\Camera.cpp" />
-    <ClCompile Include="Minion.cpp" />
+    <ClCompile Include="src\Minion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -35,7 +35,7 @@
     <ClInclude Include="src\Teemo.h" />
     <ClInclude Include="src\HUD.h" />
     <ClInclude Include="src\Camera.h" />
-    <ClInclude Include="Minion.h" />
+    <ClInclude Include="src\Minion.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
