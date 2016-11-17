@@ -175,6 +175,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Minion.cpp" />
     <ClCompile Include="src\Camera.cpp" />
     <ClCompile Include="src\HUD.cpp" />
     <ClCompile Include="src\GamePlay.cpp" />
@@ -186,6 +187,7 @@
     <ClCompile Include="src\Teemo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Minion.h" />
     <ClInclude Include="src\Camera.h" />
     <ClInclude Include="src\HUD.h" />
     <ClInclude Include="src\GamePlay.h" />
