@@ -5,6 +5,8 @@
 #include "Teemo.h"
 #include "HUD.h"
 #include "Camera.h"
+#include <vector>
+#include "Minion.h"
 
 class GamePlay
 {
@@ -13,6 +15,13 @@ private:
 	Teemo *teemo;
 	HUD *hud;
 	Camera camera;
+	Minion *minion;
+
+	vector <ofVec2f> m_way1;
+	vector <ofVec2f> m_way2;
+
+	float count;
+
 public:
 	GamePlay(GameManager *game);
 	~GamePlay();
