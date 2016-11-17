@@ -33,7 +33,6 @@ void GamePlay::Reset(GameManager *game) {
 	teemo->Reset();
 	hud->Reset();
 	camera.Reset(ofVec2f (m_background.getWidth(), m_background.getHeight()));  //do caralho isso aqui
-	minion->Reset();
 }
 
 void GamePlay::Update(GameManager *game) {
@@ -46,6 +45,7 @@ void GamePlay::Update(GameManager *game) {
 	if (count > 5) {
 		int random = rand() % 2;
 		minion = new Minion(random == 0 ? m_way1 : m_way2);
+		minion->Reset();
 		minion->Update(game);
 		count = 0;
 	}
