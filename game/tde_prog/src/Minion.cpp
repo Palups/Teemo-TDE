@@ -31,5 +31,5 @@ void Minion::Draw(const ofVec2f& camera)
 
 void Minion::Reset()
 {
-	//m_hp = 100.0f;
+	m_hp = 100.0f;
 }

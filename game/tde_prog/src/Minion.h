@@ -6,7 +6,7 @@ class Minion
 {
 private:
 	ofImage m_image;
-	//float m_hp;
+	float m_hp;
 	ofVec2f m_position;
 	ofVec2f m_destiny;
 	int current;
