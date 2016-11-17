@@ -18,11 +18,13 @@ GamePlay::~GamePlay()
 void GamePlay::Reset(GameManager *game) {
 	teemo->Reset();
 	hud->Reset();
+	camera.Reset(ofVec2f (m_background.getWidth(), m_background.getHeight()));  //do caralho isso aqui
 }
 
 void GamePlay::Update(GameManager *game) {
 	teemo->Update(game);
 	hud->Update(game, teemo);
+	camera.Update(teemo->GetPosition()); //do caralho isso aqui tb
 }
 
 void GamePlay::MousePressed(int x, int y, int btn)
@@ -33,7 +35,7 @@ void GamePlay::MousePressed(int x, int y, int btn)
 }
 
 void GamePlay::Draw(GameManager *game) {
-	m_background.draw(0, 0);
-	teemo->Draw();
-	hud->Draw(teemo);
+	m_background.draw(-camera.GetPosCamera()); //que coisa bizarra
+	teemo->Draw(camera.GetPosCamera());
+	hud->Draw(teemo, camera.GetPosCamera());
 }

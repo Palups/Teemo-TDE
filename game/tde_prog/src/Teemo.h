@@ -18,7 +18,7 @@ public:
 	~Teemo();
 
 	void Update(GameManager *game);
-	void Draw();
+	void Draw(const ofVec2f& camera);
 	void Reset();
 
 	void SetPosition(ofVec2f position);
