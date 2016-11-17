@@ -21,9 +21,8 @@ void Teemo::Update(GameManager *game) {
 
 }
 
-void Teemo::Draw(ofVec2f camera) {
-	ofVec2f position = m_position - camera;
-	m_image.draw(position.x, position.y);
+void Teemo::Draw() {
+	m_image.draw(m_position.x, m_position.y);
 }
 
 void Teemo::SetPosition(ofVec2f position)

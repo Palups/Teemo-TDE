@@ -22,8 +22,6 @@ void GamePlay::Reset(GameManager *game) {
 
 void GamePlay::Update(GameManager *game) {
 
-	m_camera.set(teemo->GetPosition().x - (ofGetWidth() / 2), teemo->GetPosition().y - (ofGetHeight() / 2));
-
 	// Teemo andando ao clicar com botão direito
 	teemo->SetDirection(teemo->GetDestiny() - teemo->GetPosition());
 	teemo->SetSpeed(teemo->GetDirection().normalize());
@@ -45,10 +43,7 @@ void GamePlay::MousePressed(int x, int y, int btn)
 }
 
 void GamePlay::Draw(GameManager *game) {
-	
-	ofVec2f position = ofVec2f(0, 0) - m_camera;
-	// m_background.setAnchorPercent(0.5, 0.5);
-	m_background.draw(position.x, position.y);
-	teemo->Draw(m_camera);
+	m_background.draw(0, 0);
+	teemo->Draw();
 	hud->Draw(teemo);
 }
