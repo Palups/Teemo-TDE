@@ -19,6 +19,12 @@ void Teemo::Reset()
 
 void Teemo::Update(GameManager *game) {
 
+	m_direction = m_destiny - m_position;
+	m_speed = m_direction.normalize();
+
+	if (m_destiny.distance(m_position) > 5)
+		m_position = m_position + m_speed * 2;
+
 }
 
 void Teemo::Draw() {
