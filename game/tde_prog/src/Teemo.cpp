@@ -12,7 +12,7 @@ Teemo::~Teemo()
 
 void Teemo::Reset()
 {
-	m_position.set(0, 0);
+	m_position.set(0, 400);
 	m_hp = 515.76f;
 	m_mana = 267.20f;
 }

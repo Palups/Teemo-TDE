@@ -18,7 +18,7 @@ public:
 	~HUD();
 
 	void Update(GameManager *game, Teemo *teemo);
-	void Draw(Teemo *teemo, const ofVec2f& camera);
+	void Draw(Teemo *teemo/*, const ofVec2f& camera*/);
 	void Reset();
 };
 

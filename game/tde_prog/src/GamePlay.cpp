@@ -64,7 +64,7 @@ void GamePlay::MousePressed(int x, int y, int btn)
 void GamePlay::Draw(GameManager *game) {
 	m_background.draw(-camera.GetPosCamera()); //que coisa bizarra
 	teemo->Draw(camera.GetPosCamera());
-	hud->Draw(teemo, camera.GetPosCamera());
+	hud->Draw(teemo/*, camera.GetPosCamera()*/);
 
 	if (minion) 
 		minion->Draw(camera.GetPosCamera());
