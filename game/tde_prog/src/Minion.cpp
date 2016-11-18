@@ -3,6 +3,7 @@
 Minion::Minion(vector <ofVec2f>& path):receiver(path)
 {
 	m_image.loadImage("images/minion.png");
+	current = 0;
 	m_position.set(receiver[0]);
 	Reset();
 }
@@ -14,7 +15,8 @@ Minion::~Minion()
 void Minion::Update(GameManager *game)
 {
 	m_destiny.set(receiver[current + 1] - m_position);
-	m_position += m_destiny;
+	m_destiny.normalize() *= 40;
+	//m_position += m_destiny;
 
 	m_size = (receiver[current + 1] - m_position).length();
 
@@ -22,6 +24,8 @@ void Minion::Update(GameManager *game)
 		m_position.set(receiver[current + 1]);
 		current += 1;
 	}
+
+	m_position += m_destiny * ofGetLastFrameTime();
 }
 
 void Minion::Draw(const ofVec2f& camera)

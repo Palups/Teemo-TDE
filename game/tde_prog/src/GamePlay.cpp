@@ -6,17 +6,18 @@ GamePlay::GamePlay(GameManager *game)
 
 	teemo = new Teemo();  //Criar Teemo
 	hud = new HUD(); //Criar HUD
+	minion = nullptr;
 
 	//caminho dos waypoints
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 35, 500));
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 75, 500));
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 185, 500));
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 295, 500));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 300, 200));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 600, 200));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 900, 200));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 1200, 200));
 
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 35, 300));
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 75, 300));
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 185, 300));
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 295, 300));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 300, 600));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 600, 600));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 900, 600));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 1200, 600));
 	//-------------------------
 
 	count = 0.0f;
@@ -46,9 +47,11 @@ void GamePlay::Update(GameManager *game) {
 		int random = rand() % 2;
 		minion = new Minion(random == 0 ? m_way1 : m_way2);
 		minion->Reset();
-		minion->Update(game);
 		count = 0;
 	}
+
+	if (minion) 
+		minion->Update(game);
 }
 
 void GamePlay::MousePressed(int x, int y, int btn)
@@ -62,5 +65,10 @@ void GamePlay::Draw(GameManager *game) {
 	m_background.draw(-camera.GetPosCamera()); //que coisa bizarra
 	teemo->Draw(camera.GetPosCamera());
 	hud->Draw(teemo, camera.GetPosCamera());
-	minion->Draw(camera.GetPosCamera());
+
+	if (minion) 
+		minion->Draw(camera.GetPosCamera());
+
+	/*if (minion != nullptr) 
+		minion->Draw(camera.GetPosCamera());*/
 }

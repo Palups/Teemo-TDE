@@ -4,7 +4,7 @@
 void ofApp::setup() {
 	//ofSetBackgroundColor(0, 0, 0);
 	ofHideCursor();
-	//ofSetFrameRate(60);
+	ofSetFrameRate(120);
 
 	gameManager = new GameManager(GAME_MENU);
 	gameMenu = new GameMenu();
