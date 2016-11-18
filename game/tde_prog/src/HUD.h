@@ -10,9 +10,7 @@ private:
 	int m_width, m_height;
 	ofImage m_background;
 
-	ofTrueTypeFont m_life;
-	ofTrueTypeFont m_mana;
-	ofTrueTypeFont m_timer;
+	float m_timer;
 public:
 	HUD();
 	~HUD();

@@ -9,15 +9,19 @@ GamePlay::GamePlay(GameManager *game)
 	minion = nullptr;
 
 	//caminho dos waypoints
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 0, 200));
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 50, 200));
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 100, 200));
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 150, 200));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + -500, 360));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + -250, 360));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 0, 360));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 250, 360));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 500, 360));
 
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 0, 600));
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 50, 600));
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 100, 600));
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 150, 600));
+
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + -500, 360));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + -250, 360));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 0, 360));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 250, 360));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 500, 360));
+
 	//-------------------------
 
 	count = 0.0f;
@@ -43,7 +47,7 @@ void GamePlay::Update(GameManager *game) {
 
 	count += ofGetLastFrameTime();
 
-	if (count > 5) {
+	if (count > 25) {
 		int random = rand() % 2;
 		minion = new Minion(random == 0 ? m_way1 : m_way2);
 		minion->Reset();
