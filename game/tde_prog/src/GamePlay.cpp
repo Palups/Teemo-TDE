@@ -9,15 +9,15 @@ GamePlay::GamePlay(GameManager *game)
 	minion = nullptr;
 
 	//caminho dos waypoints
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 300, 200));
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 600, 200));
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 900, 200));
-	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 1200, 200));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 0, 200));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 50, 200));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 100, 200));
+	m_way1.push_back(ofVec2f(m_background.getWidth() / 2 + 150, 200));
 
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 300, 600));
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 600, 600));
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 900, 600));
-	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 1200, 600));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 0, 600));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 50, 600));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 100, 600));
+	m_way2.push_back(ofVec2f(m_background.getWidth() / 2 + 150, 600));
 	//-------------------------
 
 	count = 0.0f;
@@ -71,4 +71,9 @@ void GamePlay::Draw(GameManager *game) {
 
 	/*if (minion != nullptr) 
 		minion->Draw(camera.GetPosCamera());*/
+
+	for (int i = 0; i < m_way1.size(); i++) {
+		ofDrawCircle(m_way1[i] - camera.GetPosCamera(), 5);
+		ofDrawCircle(m_way2[i] - camera.GetPosCamera(), 5);
+	}
 }
