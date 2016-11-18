@@ -20,6 +20,8 @@ private:
 	ofImage m_background;
 	ofImage m_mouse;
 
+	ofSoundPlayer m_song;
+
 	int m_gameState;
 public:
 	void Update();

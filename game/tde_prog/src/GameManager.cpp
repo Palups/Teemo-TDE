@@ -4,6 +4,8 @@ GameManager::GameManager(int gameState)
 {
 	m_gameState = gameState;
 	m_mouse.loadImage("images/mouse.png");
+	m_song.loadSound("song.mp3");
+	m_song.play();
 }
 
 
