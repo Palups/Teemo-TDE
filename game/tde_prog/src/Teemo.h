@@ -12,7 +12,8 @@ private:
 	ofVec2f m_destiny;
 
 	int m_scalar;
-	
+	bool m_skillW; //controla a skill
+	float m_duracao;
 	float m_hp, m_mana;
 	ofImage m_image;
 public:

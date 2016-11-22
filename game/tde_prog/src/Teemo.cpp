@@ -4,6 +4,7 @@ Teemo::Teemo()
 {
 	m_image.loadImage("images/teemo.png");
 	m_image.setAnchorPoint(m_image.getWidth() / 2, m_image.getHeight() / 2);
+
 	Reset();
 }
 
@@ -12,8 +13,9 @@ Teemo::~Teemo()
 }
 
 void Teemo::Skill_W()
-{
+{	
 	if (m_mana >= 40) {
+		m_skillW = true;
 		m_scalar = 5;
 		m_mana -= 40;
 	}
@@ -26,6 +28,8 @@ void Teemo::Reset()
 	m_hp = 515.76f;
 	m_mana = 267.20f;
 	m_scalar = 2;
+	m_duracao = 0.0f;
+	m_skillW = false;
 }
 
 void Teemo::Update(GameManager *game) {
@@ -34,6 +38,18 @@ void Teemo::Update(GameManager *game) {
 
 	if (m_destiny.distance(m_position) > 5)
 		m_position += m_speed * m_scalar;
+
+	if (m_skillW)
+	{
+		if (m_duracao >= 3.0f)
+		{
+			m_skillW = false;
+			m_duracao = 0.0f;
+			m_scalar = 2;
+		}
+		else
+			m_duracao += ofGetLastFrameTime();
+	}
 }
 
 void Teemo::Draw(const ofVec2f& camera) {
