@@ -12,7 +12,10 @@ Teemo::~Teemo()
 
 void Teemo::Skill_W()
 {
-	m_scalar = 15;
+	if (m_mana >= 40) {
+		m_scalar = 5;
+		m_mana -= 40;
+	}
 }
 
 void Teemo::Reset()
@@ -25,7 +28,6 @@ void Teemo::Reset()
 }
 
 void Teemo::Update(GameManager *game) {
-
 	m_direction = m_destiny - m_position;
 	m_speed = m_direction.normalize();
 

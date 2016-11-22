@@ -12,7 +12,7 @@ private:
 	ofVec2f m_destiny;
 
 	int m_scalar;
-
+	
 	float m_hp, m_mana;
 	ofImage m_image;
 public:
