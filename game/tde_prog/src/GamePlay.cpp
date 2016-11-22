@@ -61,7 +61,12 @@ void GamePlay::Update(GameManager *game) {
 void GamePlay::MousePressed(int x, int y, int btn)
 {
 	if (btn == OF_MOUSE_BUTTON_3)
-		teemo->SetDestiny(ofVec2f(ofGetMouseX(), ofGetMouseY()));
+	{
+		ofVec2f destino = ofVec2f(ofGetMouseX(), ofGetMouseY());
+		destino += camera.GetPosCamera();
+		teemo->SetDestiny(destino);
+		std::cout << destino << std::endl;
+	}
 	
 }
 

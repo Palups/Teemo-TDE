@@ -3,6 +3,7 @@
 Teemo::Teemo()
 {
 	m_image.loadImage("images/teemo.png");
+	m_image.setAnchorPoint(m_image.getWidth() / 2, m_image.getHeight() / 2);
 	Reset();
 }
 
@@ -36,7 +37,7 @@ void Teemo::Update(GameManager *game) {
 }
 
 void Teemo::Draw(const ofVec2f& camera) {
-	m_image.draw(m_position /*- camera*/);   //tive que tirar essa subtração da câmera
+	m_image.draw(m_position - camera);   //tive que tirar essa subtração da câmera
 }
 
 void Teemo::SetPosition(ofVec2f position)
