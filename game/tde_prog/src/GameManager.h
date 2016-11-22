@@ -8,8 +8,8 @@
 #define GAME_OVER 2
 #define GAME_RESET 3
 
-#define WINDOW_WIDTH 1280
-#define WINDOW_HEIGHT 720
+#define WINDOW_WIDTH 1680
+#define WINDOW_HEIGHT 1050
 
 #define ON true
 #define OFF false

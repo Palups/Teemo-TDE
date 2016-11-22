@@ -10,11 +10,18 @@ Teemo::~Teemo()
 {
 }
 
+void Teemo::Skill_W()
+{
+	m_scalar = 15;
+}
+
 void Teemo::Reset()
 {
-	m_position.set(0, 0);
+	m_position.set(0, 400);
+	m_destiny.set(0, 400);
 	m_hp = 515.76f;
 	m_mana = 267.20f;
+	m_scalar = 2;
 }
 
 void Teemo::Update(GameManager *game) {
@@ -23,12 +30,11 @@ void Teemo::Update(GameManager *game) {
 	m_speed = m_direction.normalize();
 
 	if (m_destiny.distance(m_position) > 5)
-		m_position = m_position + m_speed * 2;
-
+		m_position += m_speed * m_scalar;
 }
 
 void Teemo::Draw(const ofVec2f& camera) {
-	m_image.draw(m_position-camera);
+	m_image.draw(m_position /*- camera*/);   //tive que tirar essa subtração da câmera
 }
 
 void Teemo::SetPosition(ofVec2f position)

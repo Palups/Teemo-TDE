@@ -11,11 +11,15 @@ private:
 	ofVec2f m_speed;
 	ofVec2f m_destiny;
 
+	int m_scalar;
+
 	float m_hp, m_mana;
 	ofImage m_image;
 public:
 	Teemo();
 	~Teemo();
+
+	void Skill_W();
 
 	void Update(GameManager *game);
 	void Draw(const ofVec2f& camera);

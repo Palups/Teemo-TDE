@@ -27,6 +27,7 @@ public:
 	~GamePlay();
 
 	void MousePressed(int x, int y, int btn);
+	void KeyPressed(int key);
 
 	void Update(GameManager *game);
 	void Draw(GameManager *game);

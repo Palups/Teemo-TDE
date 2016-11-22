@@ -55,7 +55,17 @@ void ofApp::keyPressed(int key) {
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key) {
-
+	switch (gameManager->GetGameState()) {
+	case GAME_MENU:
+		break;
+	case GAME_PLAY:
+		gamePlay->KeyPressed(key);
+		break;
+	case GAME_OVER:
+		break;
+	case GAME_RESET:
+		break;
+	}
 }
 
 //--------------------------------------------------------------
