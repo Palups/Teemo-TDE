@@ -39,8 +39,8 @@ void Teemo::Reset()
 {
 	m_position.set(50, 300);
 	m_destiny.set(50, 300);
-	m_hp = 515.76f;
-	m_mana = 267.20f;
+	m_hp = 1909.00f;
+	m_mana = 947.00f;
 	m_scalar = 2;
 	m_duracao = 0.0f;
 	m_timerRegen = 0.0f;
@@ -84,10 +84,10 @@ void Teemo::Update(GameManager *game) {
 	m_timerRegen += ofGetLastFrameTime();
 	
 	if (m_timerRegen >= 1.0f) {
-		if (m_hp < 515.76f)
-			m_hp += 4.65f;
-		if (m_mana < 267.20f)
-			m_mana += 6.45f;
+		if (m_hp < 1909.00f)
+			m_hp += 1.00f;
+		if (m_mana < 947.00f)
+			m_mana += 1.00f;
 		m_timerRegen = 0.0f;
 	}
 

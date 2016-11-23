@@ -16,7 +16,7 @@ void HUD::Reset()
 	m_posY = 0;
 	m_width = 1280;
 	m_height = 50;
-	m_timer = 0;
+	m_timer = 0.0f;
 }
 
 void HUD::Update(GameManager *game, Teemo *teemo)
@@ -31,14 +31,14 @@ void HUD::Draw(Teemo *teemo/*, const ofVec2f& camera*/)
 	m_background.draw(m_posX/*-camera.x*/, m_posY/*-camera.y*/);
 
 	ofSetColor(ofColor::white);
-	ofDrawBitmapString("HP: " + ofToString(teemo->GetHp()), 25, 30);
+	ofDrawBitmapString("HP: " + ofToString(teemo->GetHp()) + "    ||", 25, 30);
 
 	ofSetColor(ofColor::white);
-	ofDrawBitmapString("Mana: " + ofToString(teemo->GetMana()), 215, 30);
+	ofDrawBitmapString("Mana: " + ofToString(teemo->GetMana()), 175, 30);
 
 	ofSetColor(ofColor::white);
-	ofDrawBitmapString("Timer: " + ofToString(m_timer), 350, 30);
+	ofDrawBitmapString("Timer: " + ofToString(m_timer), 575, 30);
 
 	string fpsStr = "FPS: " + ofToString(ofGetFrameRate(), 2);
-	ofDrawBitmapString(fpsStr, 1100, 30);
+	ofDrawBitmapString(fpsStr, 1080, 30);
 }
