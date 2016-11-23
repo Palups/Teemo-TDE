@@ -12,14 +12,18 @@ private:
 	ofVec2f m_destiny;
 
 	int m_scalar;
+
 	bool m_skillW; //controla a skill
-	float m_duracao;
-	float m_hp, m_mana;
+	bool m_invisible, m_moving;
+
+	float m_hp, m_mana, m_duracao, m_timerRegen, m_mouseTimer;
+
 	ofImage m_image;
 public:
 	Teemo();
 	~Teemo();
 
+	void Movement();
 	void Skill_W();
 
 	void Update(GameManager *game);

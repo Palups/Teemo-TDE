@@ -3,6 +3,7 @@
 Minion::Minion(vector <ofVec2f>& path):receiver(path)
 {
 	m_image.loadImage("images/minion.png");
+	m_image.setAnchorPoint(m_image.getWidth() / 2, m_image.getHeight() / 2);
 	current = 0;
 	m_position.set(receiver[0]);
 	Reset();

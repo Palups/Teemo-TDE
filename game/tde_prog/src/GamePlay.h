@@ -11,7 +11,7 @@
 class GamePlay
 {
 private:
-	ofImage m_background;
+	ofImage m_background, m_inhibitor;
 	Teemo *teemo;
 	HUD *hud;
 	Camera camera;

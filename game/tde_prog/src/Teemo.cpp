@@ -12,6 +12,20 @@ Teemo::~Teemo()
 {
 }
 
+void Teemo::Movement()
+{
+	m_direction = m_destiny - m_position;
+	m_speed = m_direction.normalize();
+
+	if (m_destiny.distance(m_position) > 5) {
+		m_position += m_speed * m_scalar;
+		m_moving = true;
+		m_invisible = false;
+	}
+	else
+		m_moving = false;
+}
+
 void Teemo::Skill_W()
 {	
 	if (m_mana >= 40) {
@@ -23,21 +37,35 @@ void Teemo::Skill_W()
 
 void Teemo::Reset()
 {
-	m_position.set(0, 400);
-	m_destiny.set(0, 400);
+	m_position.set(50, 300);
+	m_destiny.set(50, 300);
 	m_hp = 515.76f;
 	m_mana = 267.20f;
 	m_scalar = 2;
 	m_duracao = 0.0f;
+	m_timerRegen = 0.0f;
+	m_mouseTimer = 0.0f;
 	m_skillW = false;
+	m_invisible = false;
+	m_moving = false;
 }
 
 void Teemo::Update(GameManager *game) {
-	m_direction = m_destiny - m_position;
-	m_speed = m_direction.normalize();
 
-	if (m_destiny.distance(m_position) > 5)
-		m_position += m_speed * m_scalar;
+	//movimentação do teemo
+	this->Movement();
+
+	if (m_moving == false && m_invisible == false) {
+		if (m_mouseTimer >= 2.0f) {
+			m_invisible = true;
+			m_mouseTimer = 0.0f;
+		}
+		else {
+			m_mouseTimer += ofGetLastFrameTime();
+		}
+	}
+	
+	//-------------------------------------
 
 	if (m_skillW)
 	{
@@ -50,10 +78,30 @@ void Teemo::Update(GameManager *game) {
 		else
 			m_duracao += ofGetLastFrameTime();
 	}
+
+	//--------------------------------------
+
+	m_timerRegen += ofGetLastFrameTime();
+	
+	if (m_timerRegen >= 1.0f) {
+		if (m_hp < 515.76f)
+			m_hp += 4.65f;
+		if (m_mana < 267.20f)
+			m_mana += 6.45f;
+		m_timerRegen = 0.0f;
+	}
+
 }
 
 void Teemo::Draw(const ofVec2f& camera) {
-	m_image.draw(m_position - camera);   //tive que tirar essa subtração da câmera
+	if (m_invisible) {
+		ofSetColor(255, 255, 255, 50);
+		m_image.draw(m_position - camera);
+		ofSetColor(255, 255, 255, 255);
+	}
+	else {
+		m_image.draw(m_position - camera);
+	}
 }
 
 void Teemo::SetPosition(ofVec2f position)
