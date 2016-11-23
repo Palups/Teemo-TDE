@@ -12,16 +12,16 @@ GameMenu::~GameMenu()
 }
 
 void GameMenu::Reset() {
-	m_newGame = new Button(640, 580, 50, 100, "images/newGame.png");
-	m_exit = new Button(640, 650, 50, 100, "images/exit.png");
+	m_newGame = new Button(350, 600, 72, 257, "images/newGame.png");
+	m_exit = new Button(650, 600, 72, 257, "images/exit.png");
 }
 
 void GameMenu::MousePressed(int x, int y, int btn, GameManager *game)
 {
-	if (x > 640 && x < 740 && y > 580 && y < 630 && btn == OF_MOUSE_BUTTON_1)
+	if (x > 350 && x < 607 && y > 600 && y < 672 && btn == OF_MOUSE_BUTTON_1)
 		game->SetGameState(GAME_PLAY);
 
-	if (x > 640 && x < 740 && y > 650 && y < 700 && btn == OF_MOUSE_BUTTON_1)
+	if (x > 650 && x < 907 && y > 600 && y < 672 && btn == OF_MOUSE_BUTTON_1)
 		std::exit(0);
 }
 

@@ -37,8 +37,8 @@ void HUD::Draw(Teemo *teemo/*, const ofVec2f& camera*/)
 	ofDrawBitmapString("Mana: " + ofToString(teemo->GetMana()), 215, 30);
 
 	ofSetColor(ofColor::white);
-	ofDrawBitmapString(ofToString(m_timer), 350, 30);
+	ofDrawBitmapString("Timer: " + ofToString(m_timer), 350, 30);
 
 	string fpsStr = "FPS: " + ofToString(ofGetFrameRate(), 2);
-	ofDrawBitmapString(fpsStr, 1165, 30);
+	ofDrawBitmapString(fpsStr, 1100, 30);
 }

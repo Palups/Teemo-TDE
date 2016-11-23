@@ -8,7 +8,7 @@
 #define GAME_OVER 2
 #define GAME_RESET 3
 
-#define WINDOW_WIDTH 1280
+#define WINDOW_WIDTH 1200
 #define WINDOW_HEIGHT 720
 
 #define ON true
