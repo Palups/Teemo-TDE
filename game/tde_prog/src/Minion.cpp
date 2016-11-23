@@ -25,7 +25,7 @@ void Minion::Update(GameManager *game)
 		current += 1;
 	}
 
-	m_position += m_destiny * ofGetLastFrameTime();
+	m_position += m_destiny * 3 * ofGetLastFrameTime();
 }
 
 void Minion::Draw(const ofVec2f& camera)

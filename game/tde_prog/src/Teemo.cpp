@@ -16,7 +16,7 @@ void Teemo::Skill_W()
 {	
 	if (m_mana >= 40) {
 		m_skillW = true;
-		m_scalar = 5;
+		m_scalar = 4;
 		m_mana -= 40;
 	}
 }
